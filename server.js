@@ -48,3 +48,11 @@ app.get("/users", (req, res) => {
 // Start server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+app.get("/getProducts", (req, res) => {
+  const products = [
+    { id: 1, name: "Sneakers", price: 1999 },
+    { id: 2, name: "Hoodie", price: 1499 },
+    { id: 3, name: "T-Shirt", price: 799 }
+  ];
+  res.json(products);
+});
