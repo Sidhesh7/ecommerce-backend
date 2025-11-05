@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - MyShop</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Checkout</h1>
+    <a href="index.html" class="back">← Back to Home</a>
+  </header>
+
+  <section class="checkout-form">
+    <h2>Enter Delivery Details</h2>
+
+    <form id="orderForm" onsubmit="placeOrder(event)">
+      <label>Full Name</label>
+      <input type="text" required>
+
+      <label>Address</label>
+      <textarea required></textarea>
+
+      <label>City</label>
+      <input type="text" required>
+
+      <label>Payment Method</label>
+      <select required>
+        <option value="">Select</option>
+        <option>Credit / Debit Card</option>
+        <option>UPI</option>
+        <option>Cash on Delivery</option>
+      </select>
+
+      <button type="submit" class="btn">Place Order</button>
+    </form>
+  </section>
+
+  <script>
+    function placeOrder(event) {
+      event.preventDefault();
+      alert("🎉 Your order has been placed successfully!");
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
