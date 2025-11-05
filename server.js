@@ -45,9 +45,18 @@ app.get("/users", (req, res) => {
   });
 });
 
-// Start server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+const express = require("express");
+const app = express();
+const PORT = process.env.PORT || 5000;
+
+app.use(express.json());
+
+// default route
+app.get("/", (req, res) => {
+  res.send("E-commerce backend is running 🚀");
+});
+
+// add this route 👇
 app.get("/getProducts", (req, res) => {
   const products = [
     { id: 1, name: "Sneakers", price: 1999 },
@@ -55,4 +64,8 @@ app.get("/getProducts", (req, res) => {
     { id: 3, name: "T-Shirt", price: 799 }
   ];
   res.json(products);
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
